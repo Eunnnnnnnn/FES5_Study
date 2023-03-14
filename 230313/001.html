@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <style>
+        button {
+            width: 200px;
+            height: 50px;
+            background: #343f50;
+            color: white;
+        }
+
+        button:default {
+            background: black;
+        }
+
+        button:hover {
+            background: black;
+        }
+
+        button:active {
+            background: black;
+        }
+
+        button:disabled {
+            background: black;
+            opacity: 50%;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+        <button type="button" default>Button</button>
+        <button type="button" hover>Button</button>
+        <button type="button" active>Button</button>
+        <button type="button" disabled>Button</button>
+    </div>
+  </body>
+</html>

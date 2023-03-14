@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        [class^="btn"] {
+            width: 88px;
+            height: 32px;
+            background: #415568;
+            box-shadow: 1px solid #1a202c;
+            color: #cbd5df;
+            cursor: pointer;
+        }
+
+        [class^="btn"]:hover {
+            text-decoration: underline;
+            color: white;
+            transition: color 3s, background-color 10s;
+        }
+
+        /* .btn:not(:disabled):hover {
+            text-decoration: underline;
+            color: white;
+        } */
+
+        .btn:hover {
+            text-decoration: underline;
+            color: white;
+        }
+
+        .btn:active {
+            box-shadow: inset 1px 1px #262f3e;
+        }
+
+        .btn:focus {
+            outline: none;
+            border: 1px solid;
+        }
+
+        .btn:disabled {
+            box-shadow: none;
+            color: #4a5568;
+            text-decoration: none;
+            background: #3a4556;
+            border: 1px solid #343e4e;
+        }
+
+        .btn-positive {
+            color: #439aff;
+        }
+
+        .btn-positive:hover {
+            color: #439aff;
+            border: 1px solid #439aff;
+            box-shadow: inset 1px 1px #73b4ff;
+        }
+
+        .btn-positive:hover {
+            box-shadow: inset 1px 1px #73b4ff;
+        }
+
+        .btn-positive:active {
+            border: inset 1px1px solid #73b4ff;
+        }
+
+        .btn-negative {
+            color: #eb5757;
+        }
+
+        .btn-negative:hover {
+            color: #d94242;
+            border: 1px solid #d94242;
+            box-shadow: inset 1px 1px #d94242;
+        }
+
+        .btn-negative:active {
+            box-shadow: inset 1px 1px #d94242;
+        }
+
+        .btn-positive:active {
+            border: inset 1px1px solid #d94242;
+        }
+    </style>
+  </head>
+  <body>
+    <button class="btn" type="button">Button</button>
+    <button class="btn-positive" type="button">Yes</button>
+    <button class="btn-negative" type="button">Del</button>
+    <button class="btn" type="button" disabled>Button</button>
+
+  </body>
+</html>

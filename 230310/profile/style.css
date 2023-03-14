@@ -1,0 +1,32 @@
+h1, p {
+    margin: initial;
+}
+
+body {
+    background-image: url(images/background.gif);
+}
+
+.wrapper {
+    background-color: #ddd;
+    width: 800px;
+    margin: 40px auto;
+    border: 10px solid red;
+    text-align: center;
+}
+
+.header {
+    background-image: url(images/cover03.png);
+    color: white;
+}
+
+.contents {
+    
+}
+
+.footer {
+    background-color: #f4f4f4;
+}
+
+div {
+    background-color: orange;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폰트적용</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+    .black-han-sans {
+      font-family: 'Black Han Sans', sans-serif;
+    }
+
+    .gugi {
+      font-family: 'Gugi', cursive;
+    }
+
+
+    @font-face {
+      font-family: "Pretendard-Regular";
+      src: url("font/Pretendard-Regular.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Pretendard-Bold";
+      src: url("font/Pretendard-Bold.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    html {
+        font-size: 10px;
+    }
+
+    body {
+      font-family: Pretendard-Regular, "Times New Roman", Dotum, "돋움", sans-serif;
+    }
+
+    .pt-b {
+      font-family: Pretendard-Bold, sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      text-shadow: 1px 1px 0px royalblue, -1px -1px 0px royalblue;
+
+      /*text-align을 쓸 때 영문에서 디자인 때문에 흰 강 현상이 발생하므로 word-break를 써야 함*/
+      /*가독성을 해치기 때문에 word-break를 사용함*/
+      text-align: justify; 
+      word-break: break-all;
+
+      /* 행간 사이의 간격을 조절함 / px단위로 고정값을 줄 수도 있음 / 디자이너와 협엽 작업 경우 PX단위로 고정값을 주는 것은 자제 */
+      line-height: 1.4; 
+      
+      /*자간 사이의 간격*/
+      letter-spacing: 20px; 
+      /*단어 사이의 간격*/
+      word-spacing: 40px;
+      text-indent: 1em;
+    }
+
+    .va {
+        font-size: 2rem;
+        
+    }
+
+    .va strong {
+        font-size: 0.5em;
+        vertical-align: top; /*자주 사용하지는 않음*/
+    }
+
+    .box {
+        background: salmon;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        color: #fff;
+        }
+  </style>
+</head>
+
+<body>
+<div class="box">
+    안녕<br>
+    안녕
+</div>
+
+  <p class="va">안녕하세요 <strong>반갑습니다</strong></p>
+  <p class="pt-b">안녕하세요</p>
+  <p class="pt-b">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, voluptas minima nisi eum eveniet ipsum quae sit doloremque consectetur sequi nulla nemo. Esse ipsa cupiditate recusandae doloribus neque totam accusamus.</p>
+  <p class="black-han-sans">안녕하세요</p>
+  <p style="font-family: 'Jalnan OTF';">안녕하세요</p>
+  <p class="gugi">안녕하세요</p>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <style>
+        .wrap {
+            background: skyblue;
+        }
+
+        .wrap:nth-child(2)::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .box {
+            background: royalblue;
+            width: 200px;
+            height: 400px;
+            float: left;
+            margin-left : 20px;
+        }
+        /*
+        .box:nth-child(3) {
+            float: none;
+            clear: both;
+        }
+        */
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+        <div class="box">BOX</div>
+        <p>행복스럽고 기관과 사는가 교향악이다.</p>
+    </div>
+
+    <div class="wrap">
+        <div class="box">BOX1</div>
+        <div class="box">BOX2</div>
+        <div class="box">BOX3</div>
+    </div>
+
+    <p>행복스럽고 기관과 사는가 교향악이다.</p>
+  </body>
+</html>

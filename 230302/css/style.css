@@ -1,0 +1,24 @@
+.ex1 span {
+    display: inline-block;
+}
+.ex2 span {
+    display: block;
+}
+
+@media (max-width: 1000px) {
+    .ex2 span {
+        display: inline;
+    }
+}
+
+p {
+    font-size: 60px;
+}
+
+.ko {
+    word-break: keep-all;
+}
+
+.en {
+    
+}
