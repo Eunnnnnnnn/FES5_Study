@@ -1,0 +1,55 @@
+body {
+    background: #EAE8FE;
+    ;
+}
+
+section {
+    width: 360px;
+    background: #fff;
+    position: absolute;
+}
+
+.logo > img {
+    width: 386px;
+    height: 164px;
+    position: absolute;
+    left: 40%;
+}
+
+.screen {
+    height: 545px;
+    top: 30%;
+    left: 30%;
+}
+
+.Cola {
+    width: 94px;
+    height: 130px;
+    background: #fff;
+    border: 3px solid #6327fe;
+    border-radius: 10px;
+}
+
+button {
+    width: 70px;
+    height: 22px;
+    color: #fff;
+}
+
+.select {
+    background: #6327fe;
+    border: 0;
+    border-radius: 50px;
+}
+
+.money {
+    height: 50px;
+    top: 30%;
+    left: 50%;
+}
+
+.check {
+    height: 507px;
+    top: 38%;
+    left: 50%;
+}
