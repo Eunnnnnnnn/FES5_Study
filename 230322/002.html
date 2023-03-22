@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            width: 500px;
+            /* clip: rect(0 500px 760px 0); /0 0 0 0  이었을 때 요소가 다 짤려서 보이지 않음*/
+            clip-path: insect(0 0 0 0); /*0 0 0 0 일 때, 0에서부터 시작 */
+        }
+    </style>
+  </head>
+  <body>
+    <img src="./img/다이진.jpg" alt="다이진">
+
+  </body>
+</html>
