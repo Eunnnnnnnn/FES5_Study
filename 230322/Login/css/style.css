@@ -1,0 +1,154 @@
+body {
+    box-sizing: border-box;
+    position: absolute;
+    width: 520px;
+    height: 712px;
+    left: 0px;
+    top: 0px;
+    background: #fff;
+    border: 1px solid #C4C4C4;
+    border-radius: 10px;
+}
+
+h1 {
+    position: absolute;
+    width: 160px;
+    height: 20px;
+    left: 188px;
+    top: 20px;
+    font-size: 16px;
+}
+
+p {
+    position: absolute;
+    width: 369px;
+    height: 24px;
+    left: 24px;
+    top: 85px;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.input-id {
+    box-sizing: border-box;
+    position: absolute;
+    width: 472px;
+    height: 50px;
+    left: 24px;
+    top: 133px;
+    background: #fff;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+}
+
+.input-pw {
+    box-sizing: border-box;
+    position: absolute;
+    width: 472px;
+    height: 50px;
+    left: 24px;
+    top: 193px;
+    background: #fff;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+}
+
+input {
+    position: absolute;
+    width: 5.5px;
+    height: 8.5px;
+    left: 35px;
+    top: 273px;
+    border: 1px solid #fff;
+    transform: rotate(-90deg);
+}
+
+.labl-hold {
+    position: absolute;
+    width: 111px;
+    height: 20px;
+    left: 58px;
+    top: 260px;
+    font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #767676;
+}
+
+button {
+    position: absolute;
+    width: 472px;
+    height: 50px;
+    left: 24px;
+    bottom: 361px;
+    background: #2F80ED;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+
+div {
+    box-sizing: border-box;
+    position: absolute;
+    width: 472px;
+    height: 50px;
+    left: 24px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+img {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 36px;
+}
+
+span {
+    position: absolute;
+    width: 155px;
+    height: 20px;
+    left: 195px;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #767676;
+}
+
+.account-google {
+    position: absolute;
+    bottom: 205px;
+    border: 1px solid #767676;
+}
+
+.account-facebook {
+    position: absolute;
+    bottom: 145px;
+    border: 1px solid #2D9CDB;
+}
+
+.account-naver {
+    position: absolute;
+    bottom: 85px;
+    border: 1px solid #00BF18;
+}
+
+.account-google {
+    position: absolute;
+    bottom: 25px;
+    border: 1px solid #F2C94C;
+}
+.login p {
+    position: absolute;
+    width: 26px;
+    height: 18px;
+    bottom: 275px;
+    font-size: 14px;
+    color: #767676;
+}
