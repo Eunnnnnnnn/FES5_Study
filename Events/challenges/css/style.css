@@ -1,9 +1,37 @@
 body {
     margin: 0;
     padding: 0;
-    background: sandybrown;
+    background: seashell;
 }
 
 footer {
     background: slateblue;
 }
+
+h1,
+strong {
+    color: salmon;
+    font-size: 40px;
+}
+
+button {
+    background: orangered;
+    color: #fff;
+}
+
+main {
+    display: grid;
+    grid-template-rows: repeat(4);
+    gap: 24px;
+}
+
+li {
+    background: #f1e0f8;
+    color: #673399;
+}
+
+.ally-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+}
+
