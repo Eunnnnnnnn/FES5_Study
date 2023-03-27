@@ -1,0 +1,20 @@
+$jieun1: #000;
+$jieun2: #fff;
+//한글 변수를 권장하지 않습니다.
+//고유 명사 같은 경우는 한글 변수를 사용할 수 있습니다.
+$지은: #f00;
+$큰글자: 34px;
+
+.one {
+    font-size: $큰글자;
+    color: $jieun2;
+}
+
+.two {
+    background-color: $jieun2;
+    color: $jieun1;
+}
+
+.three {
+    color: $지은;
+}
