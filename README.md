@@ -1,3 +1,8 @@
 # Front End school_5
-HTML / CSS project
-JavaScript
+프론트엔드 스쿨
+
+- HTML / CSS project
+- JavaScript
+- React
+- Bootstrap
+- Sass
