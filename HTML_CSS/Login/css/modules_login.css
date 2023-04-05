@@ -88,18 +88,18 @@
 }
 
 .icon-google::before {
-    background: url("images_login/icon_google.png") no-repeat;
+    background: url("./img/icon_google.png") no-repeat;
 }
 
 .icon-naver::before {
-    background: url("images_login/icon_naver.png") no-repeat;
+    background: url("./img/icon_naver.png") no-repeat;
 }
 
 .icon-kakao::before {
-    background: url("images_login/icon_kakao.png") no-repeat;
+    background: url("./img/icon_kakao.png") no-repeat;
 }
 
 .icon-facebook::before {
     height: 24px;
-    background: url("images_login/icon_facebook.png") center no-repeat;
+    background: url("./img/icon_facebook.png") center no-repeat;
 }
