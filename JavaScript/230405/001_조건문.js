@@ -6,10 +6,10 @@
 
 const age = parseInt(prompt("나이를 말씀해주세요!"));
 
-if (age > = 18) {
+if (age >= 18) {
     console.log('안녕하세요!');
 } else if (age >= 10) {
-    console.log('안녕! 반가워 꼬마친구!');
+    console.log('반가워 꼬마야');
 } else {
     console.log('부럽다...');
-} 
+}
