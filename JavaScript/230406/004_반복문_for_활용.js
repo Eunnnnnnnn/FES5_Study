@@ -55,6 +55,7 @@ for (const item of 'hello world') {
 }
 
 // why? for of와 for in문에서는 const가 가능한가요?
+// 너무 많은 에너지를 쏟지는 마세요.
 // 한국어 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...of#%EB%AA%85%EC%84%B8%EC%84%9C
 // 영어 : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
 // ECMAScript 명세서 : https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements
@@ -62,6 +63,15 @@ for (const item of 'hello world') {
 for (const i = 0; i < 10; i++) {
     console.log(10);
 } // error
+
+let count = 0
+for (const i = 100; ;) {
+    if (count >= 10) {
+        break
+    }
+    count += 1
+    console.log(i)
+}
 
 {
     const x = 10
@@ -189,6 +199,24 @@ for (let i = 0; i < user.length; i++) {
 // console.log(Math.floor(s / user.length))
 console.log((s / user.length).toFixed(2))
 
+
+/////
+
+let s = 0
+for (const i of user) {
+    s += i.age
+}
+console.log((s / user.length).toFixed(2))
+
+/////
+
+let s = 0
+for (const i in user) {
+    s += user[i].age
+}
+console.log((s / user.length).toFixed(2))
+
+///// 심화 수업 /////
 let user = [
     {
         "_id": "642e3071c61a23c70ae6076b",
@@ -225,43 +253,72 @@ for (const i of user) {
     console.log(i.age) // 마지막에 undefined
     console.log(s) // 마지막에 102
     console.log('----------')
+    s += i.age // 마지막에 undefined + 102
+}
+console.log((s / user.length).toFixed(2))
+
+/////////
+
+let s = 0
+for (const i of user) {
+    console.log(i)
+    console.log(i.age) // 마지막에 undefined
+    console.log(s) // 마지막에 102
+    console.log('----------')
     s += i.age ?? 0
 }
 console.log((s / user.length).toFixed(2))
 
+// step 1
+let s = 0
+console.log(user[0])
+console.log(user[0].age)
+console.log(s)
+console.log('----------')
+s += user[0].age ?? 0
+
+// step 2
+console.log(user[1])
+console.log(user[1].age)
+console.log(s)
+console.log('----------')
+s += user[1].age ?? 0
+
+// ... 생략 ...
+
 
 /////
 s = 0
-for (const i of user.map((v, i) => v.age)) {
+for (const i of user.map(v => v.age)) {
     if (!!i) {
         s += i
     }
 }
-console.log((s / user.length).toFixed(2)) // 25.50
+console.log((s / user.length).toFixed(2))
+
+
+s = 0
+for (const i of [31, 32, 39, undefined]) {
+    if (!!i) {
+        s += i
+    }
+}
+console.log((s / user.length).toFixed(2))
 
 /////
 !true // false
 !false // true
-!!10 // true
+!!31 // true
 !!1 // true
 !!-1 // true
 !!0 // false
-!!'hello' //true
+!!'hello' // true
+!!NaN // false
+!!undefined // false
+!!null // false
 
 ///// 외우세요. /////
 user
     .map(v => v.age)
     .filter(v => !!v)
     .reduce((a, b) => a + b, 0)
-
-
-
-
-
-
-
-
-
-
-
-

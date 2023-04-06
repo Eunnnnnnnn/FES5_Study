@@ -97,8 +97,12 @@ switch (new Date().getDay()) {
 // window : 컨트롤 L 커서 있는 줄 전체선택
 // mac : shift + cmd + left, cmd + opt + l // 안되는 분도 있으십니다.
 
-// 커서 있는 줄 전체 삭제
-// window : Ctrl + Shift + k
+// 되돌리는 단축키(되돌리기, 되돌리기에 되돌아가기)
+// window : Ctrl + z, Ctrl + y(Ctrl + Shift + z)
+// mac : cmd + z, cmd shift z
+
+// 잘라내기
+// 한 줄 잘라내기  ctrl + x / 한 줄 삭제: ctrl + shift + k
 
 switch (value3) {
     case 'one':
@@ -111,7 +115,7 @@ switch (value3) {
         console.log('hello default')
 }
 
-// 다른 언어에서 switch문 어떻게 사용할까요? python은 switch문 없는데?
+// 다른 언어에서 switch문 어떻게 사용할까요? python은 switch문 없는데? JavaScript는 아래 문법 대신 switch 문을 사용합니다.
 
 const 요일 = new Date().getDay()
 const 요일객체 = {
@@ -121,13 +125,13 @@ const 요일객체 = {
     3: '수요일',
     4: '목요일',
     5: '금요일',
-    6: '토요일',
+    6: '토요일'
 }
 
 console.log(요일객체[요일])
-// default는 어떻게 처리?
 
-const 요일2 = new Date().getDay()
+// default는 어떻게 처리?
+const 요일2 = 10
 const 요일객체2 = {
     0: '일요일',
     1: '월요일',
@@ -135,27 +139,12 @@ const 요일객체2 = {
     3: '수요일',
     4: '목요일',
     5: '금요일',
-    6: '토요일',
+    6: '토요일'
 }
 
 // 널리쉬 연산자 사용
-console.log(요일객체[요일] ?? 'hello')
+console.log(요일객체2[요일2] ?? 'hello')
+console.log(undefined ?? 'hello')
 // 단락평가 사용
-console.log(요일객체[요일] || 'hello')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(요일객체2[요일2] || 'hello')
+console.log(undefined || 'hello')
