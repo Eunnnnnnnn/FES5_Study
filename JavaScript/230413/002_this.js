@@ -190,6 +190,40 @@ jombi.damaged[1]() // Knife
 
 /////////////////////////
 
+function attackBeam() { // 레이저 공격
+    this.hp -= 20
+}
+
+function attackKnife() { // 칼공격
+    if (this.name === 'thanos'){
+        this.hp -= 1
+        return // return을 통해 타노스의 데미지는 영향을 잘 받지 않음
+    }
+    this.hp -= 5
+}
+
+let jombi = {
+    name: 'jombi',
+    damaged1: attackBeam,
+    damaged2: attackKnife,
+    hp: 10000,
+    power: 2
+}
+
+let thanos = {
+    name: 'thanos',
+    damaged1: attackBeam,
+    damaged2: attackKnife,
+    hp: 1000,
+    power: 100
+}
+
+jombi.damaged1() // Beam
+jombi.damaged2() // Knife
+jombi.hp
+
+/////////////////////////
+
 // this 사용예시
 let 호텔 = [{
     '이름': '하나호텔',
