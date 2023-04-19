@@ -1,7 +1,7 @@
 :root {
-    --item-number: 8;
-    --item-width: 240px;
-    --translateZ: calc(var(--item-width) * var(--item-number) / 2 / 3.14)
+    /* --item-number: 7; */
+    /* --item-width: 240px; */
+    /* --translateZ: calc(var(--item-width) * var(--item-number) / 2 / 3.14) */
 }
 
 #app {
@@ -12,7 +12,7 @@
 
 .list-item {
     position: fixed;
-    width: var(--item-width);
+    width: 240px;
     height: 400px;
     padding: 0;
     top: 50%;
@@ -35,7 +35,7 @@
 }
 
 /* 반지름 공식 : 원의 둘레 /2 / 3.14 */
-
+/* 
 .list-item li:nth-child(1) {
     transform: rotateY(0) translateZ(var(--translateZ));
 }
@@ -62,11 +62,7 @@
 
 .list-item li:nth-child(7) {
     transform: rotateY(calc(360deg/var(--item-number)*6)) translateZ(var(--translateZ));
-}
-
-.list-item li:nth-child(8) {
-    transform: rotateY(calc(360deg/var(--item-number)*7)) translateZ(var(--translateZ));
-}
+} */
 
 
 .list-item img {
