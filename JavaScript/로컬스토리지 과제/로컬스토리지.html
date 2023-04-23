@@ -16,6 +16,16 @@
             align-items: center;
         }
 
+        display {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card-item {
+            width: 300px;
+            margin: 10px;
+        }
+
         img {
             display: block;
             width: 300px;
@@ -79,7 +89,7 @@
         // editor.getHTML()
         // editor.getMarkdown()
 
-        render();
+        render(); // 저장된 메모를 출력하는 함수
 
         function saveNote() {
             const title = document.getElementById("title").value;
@@ -102,22 +112,30 @@
             // }
 
             for (const item of allMemo) {
-                const saveTitle = document.createElement("h2");
-                const saveContent = document.createElement("div");
-                const saveId = document.createElement("p");
-                const deleteMemoBtn = document.createElement("button");
+                const cardItem = document.createElement("article");
+                const cardImg = document.createElement("img");
+                const cardText = document.createElement("div");
+                const cardTitle = document.createElement("h2");
+                const cardContent = document.createElement("div");
+                const cardId = document.createElement("p");
 
-                saveTitle.textContent = item.title;
-                saveContent.innerHTML = item.content;
-                saveId.textContent = item.len + 1;
+                cardItem.setAttribute("class", "card-item");
+                cardImg.setAttribute("src", "./img/뉴진스토끼.png");
+                cardTitle.textContent = item.title;
+                cardContent.innerHTML = item.content;
+                cardId.textContent = item.len + 1;
                 deleteMemoBtn.textContent = "삭제";
                 deleteMemoBtn.setAttribute("id", item.len);
                 deleteMemoBtn.setAttribute("onclick", "remove()");
 
-                display.appendChild(saveId);
-                display.appendChild(saveTitle);
-                display.appendChild(saveContent);
-                display.appendChild(deleteMemoBtn);
+                cardText.appendChild(cardTitle);
+                cardText.appendChild(cardContent);
+                cardText.appendChild(cardId);
+                cardItem.appendChild(cardImg);
+                cardItem.appendChild(cardText);
+                cardItem.appendChild(deleteMemoBtn);
+                display.appendChild(cardItem);
+
             }
         }
 
