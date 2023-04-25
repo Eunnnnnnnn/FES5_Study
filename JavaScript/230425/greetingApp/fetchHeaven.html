@@ -16,8 +16,9 @@
 
             // 유저가 등록되었는지 확인
             searchUser(userName, password) {
-
+                // Promise 객채를 생성
                 return new Promise((resolve, reject) => {
+                    // fetch 함수를 사용하여 'users.json'파일을 요청
                     fetch('users.json')
                         .then((data) => {
                             return data.json()
