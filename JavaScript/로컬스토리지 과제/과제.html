@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <style>
+        body {
+            background: rgb(117, 123, 178);
+        }
+
+        h2,
+        p {
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            display: flex;
+            justify-content: center;
+            width: 300px;
+            height: 30px;
+            margin-bottom: 10px;
+            background-color: rgb(74, 113, 243);
+            margin: 10px;
+            border: 0;
+            border-radius: 25px;
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        input::placeholder {
+            text-align: center;
+            color: #fff;
+        }
+
+        textarea {
+            display: block;
+            width: 300px;
+            height: 300px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 306px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            background-color: rgb(74, 113, 243);
+            margin: 10px;
+            border: 0;
+            border-radius: 25px;
+            font-size: 18px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .card-item a {
+            text-decoration: none;
+            color: #29363d;
+            display: block;
+            width: 700px;
+            background: #fff;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-item img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 288/196;
+            object-fit: cover;
+            vertical-align: top;
+        }
+
+        .card-text {
+            padding: 24px 16px 16px;
+        }
+
+        .card-text .title {
+            font-size: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-text .title+p {
+            font-size: 12px;
+            color: #5a6a72;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            word-break: break-all;
+            margin: 12px 0 16px;
+            line-height: 20px;
+            height: 40px;
+        }
+
+        .underline {
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 14px;
+            padding-left: 6px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px 24px;
+            width: min(1224px, 100% - 60px);
+            margin: auto;
+        }
+
+        .container article {
+            width: calc((100% - (24px * 3)) / 4);
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .container article {
+                width: calc((100% - (24px * 2)) / 3);
+            }
+        }
+
+        @media (min-width: 501px) and (max-width: 640px) {
+            .container article {
+                width: calc((100% - 24px) / 2);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .container article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <article class="card-item">
+                    <a href="#">
+                        <img src="./img/뉴진스토끼.png" alt="">
+                        <div class="card-text">
+                            <p class="underline" id="clock">00:00:00</p>
+                        </div>
+                        <input type="text" name="" id="title" placeholder="오늘의 개발 메모 타이틀" />
+                        <div id="editor"></div>
+                        <!-- <textarea name="" id="content" cols="30" rows="10"></textarea> -->
+                        <button onclick="saveNote()">메모</button>
+        </section>
+        <section id="display"></section>
+    </main>
+    <script>
+        let allMemo = JSON.parse(localStorage.getItem("allMemo"));
+        allMemo = allMemo ?? [];
+
+        const Editor = toastui.Editor;
+
+        const editor = new Editor({
+            el: document.querySelector("#editor"),
+            height: "400px",
+            initialEditType: "markdown",
+            previewStyle: "vertical",
+        });
+        // editor.getHTML()
+        // editor.getMarkdown()
+
+        render();
+
+        function saveNote() {
+            const title = document.getElementById("title").value;
+            // const content = document.getElementById("content").value;
+            const content = editor.getHTML();
+
+            allMemo.push({ title, content, len: allMemo.length });
+
+            localStorage.setItem("allMemo", JSON.stringify(allMemo));
+            render();
+        }
+
+        function render() {
+            const display = document.getElementById("display");
+            display.innerHTML = "";
+
+            // // 최신 게시물이 위로 올라오도록
+            // for (let i = allMemo.length; i > 0 ; i--) {
+            //     // 아래와 유사 코드
+            // }
+
+            for (const item of allMemo) {
+                const saveTitle = document.createElement("h2");
+                const saveContent = document.createElement("div");
+                const saveId = document.createElement("p");
+                const deleteMemoBtn = document.createElement("button");
+
+                saveTitle.textContent = item.title;
+                saveContent.innerHTML = item.content;
+                saveId.textContent = item.len + 1;
+                deleteMemoBtn.textContent = "삭제";
+                deleteMemoBtn.setAttribute("id", item.len);
+                deleteMemoBtn.setAttribute("onclick", "remove()");
+
+                display.appendChild(saveId);
+                display.appendChild(saveTitle);
+                display.appendChild(saveContent);
+                display.appendChild(deleteMemoBtn);
+            }
+        }
+
+        function remove() {
+            // console.log(event.srcElement.id);
+            // console.log(allMemo);
+            const idx = allMemo.find(
+                (item) => item.len == event.srcElement.id
+            );
+            if (idx) {
+                allMemo.splice(
+                    allMemo.findIndex((item) => item.len == idx.len),
+                    1
+                );
+            }
+            localStorage.setItem("allMemo", JSON.stringify(allMemo));
+            render();
+        }
+    </script>
+</body>
+
+</html>
