@@ -3,7 +3,7 @@
         "name": "Original Cola",
         "cost": 1000,
         "img": "cola-original.png",
-        "count": 5
+        "count": 5 // 재고량 5개까지 지정 - data에 연결된 count임
     },
     {
         "name": "Violet Cola",

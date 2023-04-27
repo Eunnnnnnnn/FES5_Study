@@ -19,58 +19,11 @@
     <!-- section 1 -->
     <section class="section1">
       <h2 class="a11y-hidden">판매 음료</h2>
-      <ul class="cola-list">
-        <li>
-          <button class="btn-cola active" type="button">
-            <img class="cola-img" src="./img/cola-original.png" alt="">
-            <span class="cola-name">Original_Cola</span>
-            <strong class="cola-price">1000원</strong>
-          </button>
-        </li>
-        <li>
-          <button disabled class="btn-cola" type="button">
-            <img class="cola-img" src="./img/cola-violet.png" alt="">
-            <span class="cola-name">Violet_Cola</span>
-            <strong class="cola-price">1000원</strong>
-            <strong class="soldout">
-              <span>품절</span>
-            </strong>
-          </button>
-        </li>
-        <li>
-          <button class="btn-cola" type="button">
-            <img class="cola-img" src="./img/cola-yellow.png" alt="">
-            <span class="cola-name">Yellow_Cola</span>
-            <strong class="cola-price">1000원</strong>
-          </button>
-        </li>
-        <li>
-          <button class="btn-cola" type="button">
-            <img class="cola-img" src="./img/cola-cool.png" alt="">
-            <span class="cola-name">Cool_Cola</span>
-            <strong class="cola-price">1000원</strong>
-          </button>
-        </li>
-        <li>
-          <button class="btn-cola active" type="button">
-            <img class="cola-img" src="./img/cola-green.png" alt="">
-            <span class="cola-name">Green_Cola</span>
-            <strong class="cola-price">1000원</strong>
-          </button>
-        </li>
-        <li>
-          <button class="btn-cola" type="button">
-            <img class="cola-img" src="./img/cola-orange.png" alt="">
-            <span class="cola-name">Orange_Cola</span>
-            <strong class="cola-price">1000원</strong>
-          </button>
-        </li>
-      </ul>
-
+      <ul class="cola-list"></ul>
       <div class="container">
         <div class="bg-box">
           <h2 class="title">잔액</h2>
-          <p>1000원</p>
+          <p></p>
         </div>
         <button class="btn" type="button">거스름돈 반환</button>
 
@@ -80,7 +33,7 @@
 
         <h2 class="a11y-hidden">장바구니</h2>
         <ul class="get-list">
-          <li>
+          <!-- <li>
             <img src="./img/cola-original.png" alt="">
             Original_Cola
             <strong>1
@@ -93,15 +46,10 @@
             <strong>2
               <span class="a11y-hidden">개</span>
             </strong>
-          </li>
+          </li> -->
         </ul>
-
         <button class="btn-get" type="button">획득</button>
-
-
       </div>
-
-
     </section>
     <!-- //section 1 -->
     <section class="section2">
@@ -146,7 +94,18 @@
     </section>
   </main>
 
-  <script type="module" src="js/index.js"></script>
+<!-- import랑 export를 사용하기 위해 module 타입을 설정
+* 쓰는이유 : 
+(1)모듈 사용 안하면 각 개별의 script 간에 참조가 계속됨
+웹페이지 로딩 때 안쓰는 기능들도 같이 되어서 성능상 이슈발생
+참고 : https://cocoder16.tistory.com/55
+
+(2)기능들 중에 필요한 것들만 가져오기 위해서 사용
+(3)캡슐화 : 객체안의 변구, 메소드들 접근 못하게 하는 것
+> 각 모듈
+(4)정보은닉 : 객체에 대한 정보들을 노출시키지 X(정보은닉의 한 종류로 캡슐화가 있고 그게 바로 module임. 이러한 이점 때문에 모듈을 사용함)
+참고 : https://inpa.tistory.com/entry/OOP-%EC%BA%A1%EC%8A%90%ED%99%94Encapsulation-%EC%A0%95%EB%B3%B4-%EC%9D%80%EB%8B%89%EC%9D%98-%EC%99%84%EB%B2%BD-%EC%9D%B4%ED%95%B4 -->
+  <script type="module" src="js/index.js"></script> 
   <!-- import/export 하기 전 -->
   <!-- <script src="js/classes/colaGenerator.js"></script>
   <script src="js/classes/vendingMachineEvents.js"></script> -->
