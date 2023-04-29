@@ -43,6 +43,7 @@ button {
     left: 1460px;
     top: 26px;
     background: #D97652;
+    border: 0;
     border-radius: 40px;
     position: absolute;
     color: white;
