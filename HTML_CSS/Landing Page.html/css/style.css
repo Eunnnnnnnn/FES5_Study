@@ -74,3 +74,25 @@ button {
     text-align: center;
     color: #D97652;
 }
+
+.middle {
+    display: flex;
+}
+
+.middle img {
+    width: 660px;
+    height: 390px;
+    border-radius: 25px;
+}
+
+.middle h2 {
+    display: flex;
+    word-wrap: break-word;
+    margin: 10px
+}
+
+.middle p {
+    display: flex;
+    word-wrap: break-word;
+    margin: 10px
+}
