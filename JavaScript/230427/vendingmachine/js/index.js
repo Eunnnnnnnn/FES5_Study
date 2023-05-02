@@ -1,8 +1,8 @@
 import ColaGenerator from "./classes/colaGenerator.js"; //모듈 불러오는 키워드 - 자동완성 후에 .js 잊지말기!
 import VendingMachineEvents from "./classes/vendingMachineEvents.js"; //모듈 불러오는 키워드
 
-const ColaGenerator = new ColaGenerator();
-const VendingMachineEvents = new VendingMachineEvents();
+const colaGenerator = new ColaGenerator();
+const vendingMachineEvents = new VendingMachineEvents();
 
 
 // 탑레벨 await : 최상위 모듈에서 실핼되는 await
