@@ -1,6 +1,6 @@
 class ColaGenerator {
     constructor() {
-        this.itemList = document.querySelector('.section1 .cola-list'); // 콜라 리스트를 제대로 가져오기 위해 섹션1까지 같이 작성
+        this.itemList = document.querySelector('.section1 .cola-list'); // 콜라 리스트를 선택자로 제대로 가져오기 위해 섹션1까지 같이 작성
     }
 
     async setup() {

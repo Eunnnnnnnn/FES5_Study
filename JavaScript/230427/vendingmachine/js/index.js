@@ -13,7 +13,7 @@ const VendingMachineEvents = new VendingMachineEvents();
 // vendingMachineEvents.bindEvent();
 
 (async function () {
-    await colaGenerator.setup();
+    await colaGenerator.setup(); // 비동기 함수
     vendingMachineEvents.bindEvent();
 })()
 
