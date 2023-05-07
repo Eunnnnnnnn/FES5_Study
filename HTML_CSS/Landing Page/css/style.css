@@ -96,3 +96,10 @@ button {
     word-wrap: break-word;
     margin: 10px
 }
+
+.card img {
+    width: 378px;
+    height: 378px;
+    border-radius: 30px;
+    margin: 72px;
+}
