@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        // const div = document.createElement('div');
+        // const h1 = document.createElement('h1');
+        // const section = document.createElement('section');
+        // const h2 = document.createElement('h2');
+        // const img = document.createElement('img');
+        // const p = document.createElement('p');
+
+        // document.body.append(div, h1, section, h2, img p);
+
+        // let bodyElement = document.querySelector("body");
+
+        // let h1Element = document.createElement("h1");
+        // h1Element.textContent = "테스트 페이지";
+        // bodyElement.appendChild(h1Element);
+
+        // let h2Element = document.createElement("h2");
+        // h2Element.textContent = "섹션제목";
+        // bodyElement.appendChild(h2Element);
+
+        // let pElement = document.createElement("p");
+        // pElement.textContent = "내용";
+        // bodyElement.appendChild(pElement);
+
+        
+        const div = document.createElement("div");
+        const h1 = document.createElement("h1");
+        parent.append('테스트 페이지');
+        const section = document.createElement("section");
+        const h2 = document.createElement('h2');
+        parent.append('섹션제목');
+        const img = document.createElement('img');
+        const p = document.createElement('p');
+        parent.append('내용');
+        document.body.appendChild(div,h1, section,h2, img, p);
+
+    </script>
+</body>
+
+</html>
