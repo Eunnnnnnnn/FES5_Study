@@ -224,7 +224,7 @@ section {
     background: #eae8fe;
     border-radius: 5px;
     border: 1px solid #bdbdbd;
-    overflow-y: auto;
+    overflow-y: auto; /* 획득한 음료에서 스크롤 생기게 하는 코드 */
     padding: 12px;
 }
 
