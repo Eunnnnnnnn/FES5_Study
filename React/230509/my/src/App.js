@@ -1,29 +1,58 @@
-import { useState } from "react";
-import Login from './Login';
-import Homepage from "./Homepage";
-import Modal from "./Modal";
+import React, { useState } from "react";
+import Detail from "./Components/Detail";
+import Question from "./Components/Question";
+import Review from "./Components/Review";
 
-function App() {
-  const user = {
-    idUser: 'jaehyun@weniv.com',
-    pwUser: '1234'
+const ContentsContainer = ({ listName }) => {
+  if (listName === "detail") {
+    return <Detail />;
+  } else if (listName === "qa") {
+    return <Question />;
+  } else if (listName === "review") {
+    return <Review />;
   }
+};
 
-  const [login, setLogin] = useState(false);
+function NavBar() {
+  const [listName, setListName] = useState("detail");
+  const checkId = (e) => {
+    setListName(e.target.id);
+  };
 
-  console.log(login);
   return (
     <>
-      login ? <Homepage /> : < Login infoUser={user} setLogin={setLogin} />
-      < Modal>
-        <h2>사용약관에 대해 말씀드리겠습니다.</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi illum laborum, quo facilis eaque quam optio aliquam nam provident. Laboriosam delectus, atque doloremque nam harum molestias ab quisquam! Quis, pariatur.</p>
-        <a href="#none">더 보기</a>
-      </Modal>
+      <nav>
+        <ul>
+          <li
+            id="detail"
+            style={
+              listName === "detail" ? { color: "red" } : { color: "black" }
+            }
+            onClick={checkId}
+          >
+            상세정보
+          </li>
+          <li
+            id="qa"
+            onClick={checkId}
+            style={listName === "qa" ? { color: "red" } : { color: "black" }}
+          >
+            Q&A
+          </li>
+          <li
+            id="review"
+            onClick={checkId}
+            style={
+              listName === "review" ? { color: "red" } : { color: "black" }
+            }
+          >
+            Review
+          </li>
+        </ul>
+      </nav>
+      <ContentsContainer listName={listName} />
     </>
-  )
-
-
+  );
 }
 
-export default App;
+export default NavBar;
