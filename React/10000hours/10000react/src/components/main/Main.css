@@ -39,7 +39,7 @@ main .btn-exc::after {
     bottom: -20px;
     width: 60px;
     height: 70px;
-    background-image: url("../../images/hand.png");
+    background-image: url("../../img/hand.png");
 }
 
 main .cont-result .txt-wannabe {

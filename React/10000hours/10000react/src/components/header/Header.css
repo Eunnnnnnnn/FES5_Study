@@ -21,7 +21,7 @@ header .tit-law::after {
     top: 50%;
     left: 50%;
     margin: -112px 0 0 -112px;
-    background-image: url("../../images/title_bg.png");
+    background-image: url("../../img/title_bg.png");
     background-size: contain;
 }
 
@@ -55,10 +55,10 @@ header .txt-desc {
 
 .txt-desc::before {
     left: 0;
-    background-image: url("../../images/txt-left.png");
+    background-image: url("../../img/txt-left.png");
 }
 
 .txt-desc::after {
     right: 0;
-    background-image: url("../../images/txt-right.png");
+    background-image: url("../../img/txt-right.png");
 }
