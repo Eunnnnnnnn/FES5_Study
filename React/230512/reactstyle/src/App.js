@@ -3,7 +3,8 @@ import Example from "./Components/Example"
 import reset from "styled-reset"
 import normalize from "styled-normalize"
 
-const GlobalStyle = createGlobalStyle`
+//styled component
+const GlobalStyle = createGlobalStyle` 
     ${normalize}
  
     span {
