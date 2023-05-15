@@ -1,0 +1,54 @@
+:root {
+    font-family: 'Montserrat', sans-serif;
+	/*
+	font-weight: 500;
+	font-weight: 700;
+	*/
+}
+
+body {
+	background: #673399;
+}
+
+section {
+	width: 1080px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section p {
+	color: #bd8fe8;
+	font-size: 14px;
+}
+
+h1 {
+	color: #fff;
+	font-size: 40px;
+}
+
+img {
+	display: flex;
+	width: 26%;
+	opacity: 50%;
+}
+
+span {
+	color: #fff;
+}
+
+.project {
+	gap: 24px;
+}
+.project-list {
+	width: calc(1080px - 26%);
+	background: #fff;
+}
+
+.project-list p {
+	font-size: 18px;
+}
+
+.project-list li {
+	font-size: 14px;
+}

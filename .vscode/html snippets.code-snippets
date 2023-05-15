@@ -1,0 +1,71 @@
+{
+	"html 주석": {
+	  "prefix": "/",
+	  "body": ["<!-- $1 -->"],
+	  "description": "html 주석"
+	},
+	"html": {
+	  "prefix": "!!",
+	  "body": [
+		"<!DOCTYPE html>",
+		"<html lang=\"ko-KR\">",
+		"  <head>",
+		"    <meta charset=\"UTF-8\">",
+		"    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+		"    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+		"    <title>$1</title>",
+		"  </head>",
+		"  <body>",
+		"    $2",
+		"",
+		"  </body>",
+		"</html>",
+		""
+	  ],
+	  "description": "한국어 페이지용 html 템플릿"
+	},
+	"seo": {
+	  "prefix": "!seo",
+	  "body": [
+		"<link rel=\"shortcut icon\" href=\"./favicon.ico\">",
+		"<meta property=\"og:type\" content=\"website\">",
+		"<meta property=\"og:image\" content=\"./img/meta.png\">",
+		"<meta property=\"og:url\" content=\"$1\">",
+		"<meta property=\"og:title\" content=\"$2\">",
+		"<meta property=\"og:site_name\" content=\"$3\">",
+		"<meta property=\"og:description\" content=\"$4\">",
+		"<meta name=\"description\" lang=\"ko\" content=\"$5\">",
+		"<meta name=\"author\" content=\"$6\">",
+		""
+	  ],
+	  "description": ""
+	},
+
+	"meta-tag": {
+	  "prefix": "meta",
+	  "body": [
+		"<meta name=\"description\" content=\"\">",
+		"<meta property=\"og:title\" content=\"페이지 제목\" />",
+		"<meta property=\"og:type\" content=\"컨텐츠 타입\" />",
+		"<meta property=\"og:url\" content=\"페이지 주소\" />",
+		"<meta property=\"og:image\" content=\"페이지 썸네일 이미지 주소\" />",
+		"<meta property=\"og:description\" content=\"페이지 설명\" />",
+	
+		"<meta name=\"twitter:card\" content=\"카드의 타입\">",
+		"<meta name=\"twitter:title\" content=\"카드의 제목\">",
+		"<meta name=\"twitter:description\" content=\"카드 설명\">",
+		"<meta name=\"twitter:image\" content=\"카드 썸네일 이미지 주소\">"
+	  ],
+	  "description": "meta"
+	},
+
+	"img": {
+	  "prefix": "!img",
+	  "body": [
+		"<img src=\"http://placehold.it/100x100\" alt=\"\">",
+		""
+	  ],
+	  "description": "img"
+	}
+
+  }

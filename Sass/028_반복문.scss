@@ -1,0 +1,9 @@
+$jieun: 6;
+@while $jieun > 1 {
+    $jieun: $jieun - 1;
+    .content-#{$jieun} {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+}

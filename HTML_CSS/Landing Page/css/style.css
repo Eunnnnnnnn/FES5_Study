@@ -1,0 +1,105 @@
+* {
+    padding: 20;
+    margin: 20;
+}
+
+body {
+    /* position: absolute; - 아직 고정시키지 않기 위해 주석처리함 */
+    width: 1920px;
+    height: 900px;
+    left: 0px;
+    top: 2px;
+    background: #F2E9D8;
+}
+
+header {
+    position: absolute;
+    width: 1920px;
+    height: 102px;
+    left: 0px;
+    top: 0px;
+    background: #F2E9D8;
+}
+
+ul,
+li {
+    list-style: none;
+    /*list의 점 안보이게 하기 위해 작성한 코드*/
+}
+
+ul {
+    /*li 위아래가 아닌 좌우로 보이기 하기 위해 작성한 코드*/
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    /*justify-content를 이용해서 좌우로 나타나도록 작성함*/
+    margin-top: 18px;
+}
+
+button {
+    position: absolute;
+    width: 140px;
+    height: 50px;
+    left: 1460px;
+    top: 26px;
+    background: #D97652;
+    border: 0;
+    border-radius: 40px;
+    position: absolute;
+    color: white;
+    /* font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 700; */
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.center {
+    position: absolute;
+    width: 660px;
+    height: 390px;
+    left: 320px;
+    top: 1060px;
+}
+
+.emphasis {
+    position: absolute;
+    width: 929px;
+    height: 60px;
+    left: 496px;
+    top: 1570px;
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #D97652;
+}
+
+.middle {
+    display: flex;
+}
+
+.middle img {
+    width: 660px;
+    height: 390px;
+    border-radius: 25px;
+}
+
+.middle h2 {
+    display: flex;
+    word-wrap: break-word;
+    margin: 10px
+}
+
+.middle p {
+    display: flex;
+    word-wrap: break-word;
+    margin: 10px
+}
+
+.card img {
+    width: 378px;
+    height: 378px;
+    border-radius: 30px;
+    margin: 72px;
+}

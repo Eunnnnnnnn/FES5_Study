@@ -1,0 +1,70 @@
+body {
+    background: #EAE8FE;
+    ;
+}
+
+section {
+    width: 360px;
+    background: #fff;
+    display: inline-flex;
+    gap: 38px;
+}
+
+.logo > img {
+    width: 386px;
+    height: 164px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+.screen {
+    height: 545px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    width: 306px;
+    height: 272px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+
+.Cola {
+    width: 94px;
+    height: 130px;
+    background: #fff;
+    border: 3px solid #6327fe;
+    border-radius: 10px;
+}
+
+button {
+    width: 70px;
+    height: 22px;
+    color: #fff;
+}
+
+.select {
+    background: #6327fe;
+    border: 0;
+    border-radius: 50px;
+}
+
+.money {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.check {
+    height: 507px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

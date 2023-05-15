@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 간단한 투두 리스트기능 구현해보기
+    1. 해야할 일 Todo 클래스 (내용, 상태 두 가지 프로퍼티를 가집니다.)
+    2. Todo 클래스는 상태를 변경하는 changeState 메서드를 가집니다.
+    3. 할일의 목록을 관리하는 관리자를 추상화한 TodoManager 클래스 (할일 목록을 프로퍼티로 가집니다.)
+    4. 할 일을 저장하고(addItem), 할 일의 목록을 보여주며(getItems), 할 일의 남은 갯수를 반환하는(getLeftTodoCount) 세 가지 메소드를 가집니다. -->
+
+    <script>
+        // 1. 할 것 객체
+        class Todo {
+            constructor(item, finished) { // 2가지 프로퍼티가 필요함 (해야할일(item), 상태가 끝났는지 안끝났는지(finished))
+                this.item = item; //(todo 객체가 완성되면 인스턴스를 this로 연결받하기 위함)
+                this.finished = finished;
+            }
+
+            changedState() { // class 안에 function을 쓸 필요가 없으므로 생략함
+                this.finished = !this.finished; // 부정연산자 덕분에 할 일을 체크하고 취소가 가능해짐
+            }
+        }
+
+        class TodoManager {
+            constructor() {
+                this.todoList = [];
+            }
+
+            addItem(item, finished = false) {
+                const todo = new Todo(item, finished); // new 연사자를 이용해서 Todo 인스턴스를 생성하고 있음 
+                this.todoList.push(todo);
+            }
+
+            getItems() {
+                return this.todoList;
+            }
+
+            getLeftTodoCount() {
+                //return this.todoList.reduce((total, current) => current.finished === false ? ++total : total, 0);
+                return this.todoList.filter((item) => item.finishied === false).length;
+            }
+
+            // if (current.finishied === false) {
+            //     return ++total;
+            // } else {
+            //     return total;
+            // }
+        }
+    </script>
+
+</body>
+
+</html>

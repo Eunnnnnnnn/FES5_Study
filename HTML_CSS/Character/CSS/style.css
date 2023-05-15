@@ -1,0 +1,175 @@
+body{
+    background: #d8c5ad;
+}
+
+.cat {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-60%, -50%);
+}
+
+.face{
+    width: 700px;
+    height: 600px;
+    background: #fff;
+    border-radius: 60% 60% 55% 55%;
+    border: 6px solid #000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ear-left,
+.ear-right {
+    z-index: -1;
+}
+
+.ear-left {
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    border: 6px solid #000;
+    border-radius: 15%;
+    position: absolute;
+    bottom: 60%;
+    transform: rotate(-10deg);
+    right: 5%;
+}
+
+.ear-right {
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    border: 6px solid #000;
+    border-radius: 15%;
+    position: absolute;
+    bottom: 60%;
+    transform: rotate(10deg);
+    left: 5%;
+}
+
+
+.eye {
+    background:#81be65;
+    width: 260px;
+    height: 220px;
+    border: 6px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+}
+
+.eye-center {
+    background: #000;
+    width: 40px;
+    height: 160px;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.2em;
+}
+
+.face .eye .eye-glitter {
+    width: 60px;
+    height: 50px;
+    background: #fff;
+    opacity: 80%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50%;
+}
+
+.face .eye .eye-shadow {
+    width: 50px;
+    height: 80px;
+    background: #313131;
+    opacity: 80%;
+    position: absolute;
+    border-radius: 50% 50%;
+    bottom: 20%;
+}
+
+.left-eye{
+    left: 10%;
+}
+
+.left-eye-pupil {
+    left: 50%;
+}
+
+.left-eye-glitter {
+    left: 60%;
+}
+
+.left-eye-shadow {
+    left: 10%;
+}
+
+.right-eye{
+    right: 10%;
+}
+
+.right-eye-pupil {
+    right: 50%;
+}
+
+.right-eye-glitter {
+    right: 30%;
+}
+
+.right-eye-shadow {
+    right: 10%;
+}
+
+.nose{
+    width: 25px;
+    height: 10px;
+    background: #e3eef5;
+    border-radius: 40% 40% 60% 60%;
+    border: 5px solid #000;
+    position: absolute;
+    bottom: 34%;
+    right: 48%;
+}
+
+.mouth{
+    background: #fc5656;
+    width: 50px;
+    height: 30px;
+    border: 6px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 70%;
+    right: 46%;
+}
+
+.face .whisker {
+    width: 200px;
+    height: 4px;
+    background: #000;
+    border-radius: 1px;
+    position: absolute;
+    top: 50%;
+}
+
+.face .whisker.left.top {
+    top: 66%;
+    left: -1%;
+    transform: rotate(3deg);
+}
+
+.face .whisker.left.bottom {
+    top: 75%;
+    left: -0.5%;
+    transform: rotate(-10deg);
+}
+
+.face .whisker.right.top {
+    top: 66%;
+    right: -1%;
+    transform: rotate(-3deg);
+}
+
+.face .whisker.right.bottom {
+    top: 75%;
+    right: -0.5%;
+    transform: rotate(10deg);
+}
