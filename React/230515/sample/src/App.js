@@ -1,22 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function Counter() {
+function 부하() {
+  let s = 0;
+  for (let i = 0; i < 1000000000; i++) {
+    s += i;
+  }
+  return s;
+}
+
+function TryUseMemo() {
   const [count, setCount] = useState(0);
+  let result = 부하();
+
   const handleCountUp = (e) => {
     setCount(count + 1);
+    console.log(count);
   };
-  useEffect(() => {
-    if(count%2){
-      alert("홀수입니다")
-    }else{
-      alert("짝수입니다")
-    }
-  }, [count])
+
   return (
-    <>
+    <div>
+      <h1>계산 결과 : {result}</h1>
       <div>{count}</div>
-      <button onClick={handleCountUp}>Up!</button>
-    </>
+      <button onClick={handleCountUp}>UP!</button>
+    </div>
   );
 }
-export default Counter;
+export default TryUseMemo;
