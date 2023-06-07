@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div>
-      {/* 버튼을 누르면 hailey에서 ham으로 변경되는 것을 확인할 수 있음 */}
+      {/* 버튼을 누르면 zeon에서 zin으로 변경되는 것을 확인할 수 있음 */}
       <h1>{state.name}</h1>
       <button onClick={() => { dispatch(changeName()) }}>Name Change</button>
     </div>
