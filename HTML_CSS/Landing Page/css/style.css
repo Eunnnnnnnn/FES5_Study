@@ -46,7 +46,7 @@ header {
     color: #000000;
 }
 
-.main img {
+.main img { /*이미지 고정 */
     position: absolute;
     width: 415px;
     height: 890px;
