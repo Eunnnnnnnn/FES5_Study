@@ -15,4 +15,5 @@ const ModalStyle = styled.div`
   font-size: var(--font-size-md);
   border-radius: 10px, 10px, 0, 0;
   background-color: var(--background);
+  
 `

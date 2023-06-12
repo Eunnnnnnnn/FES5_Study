@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 export function Alert() {
-  const [Confirm, setConfirm] = useState(false);
+  const [setConfirm] = useState(false);
 
   return (
     <div>
@@ -13,7 +13,7 @@ export function Alert() {
   );
 }
 
-const AlertStyle = styled.div`
+const AlertStyle = styled.div` 
 width: 252px;
 height: 110px;
 border-radius: 10px;
