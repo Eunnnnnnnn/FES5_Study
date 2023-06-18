@@ -3,87 +3,109 @@ import styled from 'styled-components';
 import { BasicHeader } from '../components/header/BasicHeader';
 import { ProfileSm } from '../components/common/Profile';
 import { NavBar } from '../components/common/NavBar';
-import { ResetStyle } from '../style/ResetStyle';
-import { GlobalStyle } from '../style/GlobalStyle';
+import { useNavigate } from 'react-router-dom';
 
-export default function ProfileModification() {
-  return(
+export default function ChatList() {
+  const navigate = useNavigate();
+
+  return (
     <>
-    <ChatListPageStyle>
-      <ResetStyle />
-      <GlobalStyle />
       <BasicHeader />
-      <ChatContainerStyle>
-        <div className='chat'>
-          <ProfileSm url={''}/>
-          <span>바베큐좋아</span>
-          <p>이번에 고기 언제들어와요?</p>
-          <div className='date'>2023.06.15</div>
-        </div>
-      </ChatContainerStyle>
-      <ChatContainerStyle>
-        <div className='chat'>
-          <ProfileSm url={''}/>
-          <span>주말마다캠핑</span>
-          <p>어디야 지금 뭐해, 나랑 별 보러 가지 않을래...</p>
-          <div className='date'>2023.06.15</div>
-        </div>
-      </ChatContainerStyle>
-      <ChatContainerStyle>
-        <div className='chat'>
-          <ProfileSm url={''}/>
-          <span>팔공산 쳐돌이</span>
-          <p>팔공산 정기뻗은~ 태전 동산에 새봄을 알리는...</p>
-          <div className='date'>2023.06.15</div>
-        </div>
-      </ChatContainerStyle>
-      <NavBarStyle>
-        <NavBar />
-      </NavBarStyle>
-    </ChatListPageStyle>
+      <ChatListPageStyle>
+        <ChatContainerStyle
+          onClick={() => {
+            navigate('/chatroom');
+          }}
+        >
+          <ProfileSm url={''} confirm={true} />
+          <div className="text">
+            <span>바베큐러버</span>
+            <div className="chatroomlink">
+              <p>이번에 고기 언제들어와요?</p>
+              <div className="date">2023.06.15</div>
+            </div>
+          </div>
+        </ChatContainerStyle>
+        <ChatContainerStyle>
+          <ProfileSm url={''} />
+          <div className="text">
+            <span>주말마다캠핑</span>
+            <div className="chatroomlink">
+              <p>지금 뭐해, 나랑 별 보러 가지 않을래</p>
+              <div className="date">2023.06.15</div>
+            </div>
+          </div>
+        </ChatContainerStyle>
+        <ChatContainerStyle>
+          <ProfileSm url={''} />
+          <div className="text">
+            <span>팔공산 쳐돌이</span>
+            <div className="chatroomlink">
+              <p>팔공산 정기뻗은~ 동산에 새봄을 알리는</p>
+              <div className="date">2023.06.15</div>
+            </div>
+          </div>
+        </ChatContainerStyle>
+      </ChatListPageStyle>
+      <NavBar />
     </>
-  )
+  );
 }
 
 const ChatListPageStyle = styled.div`
+  width: var(--basic-width);
+  height: var(--basic-height);
   background-color: var(--background-color);
-  width: 390px;
-  height: 844px;
-`
+  overflow-y: scroll;
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    background-color: var(--background-color);
+  }
+`;
 
 const ChatContainerStyle = styled.div`
-  width: var(--basic-width);
   height: 66px;
   display: flex;
   align-items: center;
-  background-color: #FCFBF3;
+  background-color: #fcfbf3;
+  cursor: pointer;
 
-img {
-  width: 42px;
-  height: 42px;
-  margin: 0 16px;
-}
+  img {
+    width: 42px;
+    height: 42px;
+    margin: 0 16px;
+  }
 
-span {
-  width: 120px;
-  height: 19px;
-}
+  .text {
+    flex: 1;
+  }
 
-p {
-    width: 240px;
+  span {
+    display: block;
+    height: 19px;
+    font-weight: bold;
+    font-size: var(--font--size-md);
+  }
+
+  .chatroomlink {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p {
+    display: inline-block;
     height: 16px;
-    margin: 0 17px;
-}
+    line-height: 16px;
+    font-size: var(--font--size-sm);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 220px;
+  }
 
-.date {
-  display: inline-block;
-  color: var(--basic-color-7);
-  font-size: 10px;
-  margin: 16px 0;
-  position: relative;
-}
+  .date {
+    color: var(--basic-color-7);
+    font-size: 10px;
+    margin-right: 7px;
+  }
 `;
-
-const NavBarStyle = styled.div`
-    margin-top: 688px;
-`
