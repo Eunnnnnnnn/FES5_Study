@@ -9,8 +9,21 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function FollowersProfile({ followingUser }) {
+<<<<<<< HEAD
   const [isFollow, setIsFollow] = useState(followingUser.isfollow)
   const navigate = useNavigate();
+=======
+  const [isMe, setIsMe] = useState(false);
+  
+  const [isFollow, setIsFollow] = useState(followingUser.isfollow)
+  const navigate = useNavigate();  
+
+  useState(()=>{
+    if(JSON.parse(sessionStorage.getItem('user')).UserAtom.accountname === followingUser.accountname){
+      setIsMe(true)
+    }
+  },[])
+>>>>>>> a3b9603c72ff06c3e3ca519c4e74727c6adbab35
 
   const followBtnHandler = async () => {
     await doFollowing(followingUser.accountname);
@@ -33,11 +46,24 @@ export default function FollowersProfile({ followingUser }) {
         <p>{followingUser.username}</p>
         <span>{followingUser.intro}</span>
       </div>
+<<<<<<< HEAD
       {isFollow ? (
         <WhiteSmBtn contents={'취소'} handleFunc={unFollowBtnHandler} />
       ) : (
         <GreenSmBtn contents={'팔로우'} handleFunc={followBtnHandler} />
       )}
+=======
+      {
+        !isMe?
+          isFollow ? (
+            <WhiteSmBtn contents={'취소'} handleFunc={unFollowBtnHandler} />
+            ) : (
+            <GreenSmBtn contents={'팔로우'} handleFunc={followBtnHandler} />
+          )
+        :null
+      }
+      
+>>>>>>> a3b9603c72ff06c3e3ca519c4e74727c6adbab35
     </FollowersProfileStyle>
   );
 }
