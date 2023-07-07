@@ -16,24 +16,17 @@ section {
     top: 2px;
 } */
 
-.heading {
-    position: absolute;
+header {
+    /* ul태그의 배치를 위해서 position: absolute;를 삭제하고 flex를 주고 margin top으로 정렬을 완성함/ 왜 이렇게 된 건지는 공부 필요함 */
+    display: flex;
+    align-content: center; 
     width: 1920px;
     height: 102px;
     left: 0px;
     background: #F2E9D8;
 }
 
-header {
-    position: absolute;
-    width: 1920px;
-    height: 102px;
-    left: 0px;
-    top: 0px;
-}
-
 img {
-    display: flex;
     width: 130px;
     height: 40px;
     margin-top: 31px;
@@ -47,10 +40,13 @@ li {
 
 /*li 위아래가 아닌 좌우로 보이기 하기 위해 작성한 코드*/
 ul {
+    position: absolute;
     display: flex;
-    gap: 30px;
     justify-content: center;
     /*justify-content를 이용해서 좌우로 나타나도록 작성함*/
+    gap: 30px;
+    margin-left: 1206px;
+    margin-top: 41px;
 }
 
 button {
