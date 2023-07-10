@@ -84,6 +84,21 @@ button {
     color: #000000;
 }
 
+.maindownload {
+    position: absolute;
+    width: 140px;
+    height: 50px;
+    background: #D97652;
+    border: 0;
+    border-radius: 40px;
+    position: absolute;
+    color: white;
+    /* font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 700; */
+    font-size: 16px;
+}
+
 .main img { /*이미지 고정 */
     position: absolute;
     width: 415px;
@@ -92,14 +107,13 @@ button {
     top: 0px;
 }
 
-
-.center {
+/* .center {
     position: absolute;
     width: 660px;
     height: 390px;
     left: 320px;
     top: 1060px;
-}
+} */
 
 .emphasis {
     position: absolute;
