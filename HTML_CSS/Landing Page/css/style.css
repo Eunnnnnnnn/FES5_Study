@@ -16,6 +16,12 @@ section {
     top: 2px;
 } */
 
+.top {
+    width: 1920px;
+    height: 900px;
+    background: #F2E9D8;
+}
+
 header {
     /* ul태그의 배치를 위해서 position: absolute;를 삭제하고 flex를 주고 margin top으로 정렬을 완성함/ 왜 이렇게 된 건지는 공부 필요함 */
     display: flex;
@@ -26,7 +32,7 @@ header {
     background: #F2E9D8;
 }
 
-img {
+.nav {
     width: 130px;
     height: 40px;
     margin-top: 31px;
@@ -58,7 +64,6 @@ button {
     background: #D97652;
     border: 0;
     border-radius: 40px;
-    position: absolute;
     color: white;
     /* font-family: 'Spoqa Han Sans Neo';
     font-style: normal;
@@ -66,28 +71,38 @@ button {
     font-size: 16px;
 }
 
-.main h2 {
+.top h2 {
     position: absolute;
     width: 737px;
     height: 120px;
+    top: 302px;
     left: 320px;
-    top: 304px;
-
-    font-family: 'Spoqa Han Sans Neo';
+    /* font-family: 'Spoqa Han Sans Neo';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 700; */
     font-size: 48px;
     line-height: 60px;
-    display: flex;
-    align-items: center;
+}
 
-    color: #000000;
+.top p {
+    position: absolute;
+    width: 439px;
+    height: 86px;
+    top: 464px;  
+    left: 320px;
+    font-family: 'Spoqa Han Sans Neo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
 }
 
 .maindownload {
     position: absolute;
     width: 140px;
     height: 50px;
+    top: 590px;
+    left: 320px;
     background: #D97652;
     border: 0;
     border-radius: 40px;
@@ -99,21 +114,13 @@ button {
     font-size: 16px;
 }
 
-.main img { /*이미지 고정 */
+.center {
     position: absolute;
     width: 415px;
-    height: 890px;
-    left: 0px;
-    top: 0px;
+    height: 766px;
+    top: 136px;
+    left: 1185px;
 }
-
-/* .center {
-    position: absolute;
-    width: 660px;
-    height: 390px;
-    left: 320px;
-    top: 1060px;
-} */
 
 .emphasis {
     position: absolute;
