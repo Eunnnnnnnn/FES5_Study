@@ -1,13 +1,19 @@
 import React from 'react';
-// import ReactDOM from 'react-dom'; //구버전
 import { createRoot } from 'react-dom/client';
+import { HashRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+import GlobalStyle from './style/GlobalStyle';
+import ResetStyle from './style/ResetStyle';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <RecoilRoot>
+    <HashRouter>
+      <GlobalStyle />
+      <ResetStyle />
+      <App />
+    </HashRouter>
+  </RecoilRoot>
 );

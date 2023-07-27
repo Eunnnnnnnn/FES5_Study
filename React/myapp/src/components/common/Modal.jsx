@@ -1,11 +1,19 @@
 import styled from 'styled-components'
 
-export function Modal() {
-  return(
+export function Modal({ contents, handleFunc }) {
+
+  return (
     <ModalStyle>
       <div className='bar'></div>
-      <button className='settingComponent'>설정 및 개인정보</button>
-      <button className='logout'>로그아웃</button>
+      <ul>
+        {contents.map((item, index) => {
+          return (
+            <li key={index}>
+              <button className='settingComponent' onClick={handleFunc}>{item}</button>
+            </li>
+          );
+        })}
+      </ul>
     </ModalStyle>
   )
 }
@@ -16,16 +24,16 @@ const ModalStyle = styled.div`
   align-items: center;
   justify-content: center;
   width: var(--basic-width);
-  height: 138px;
   left: 26px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   font-size: var(--font-size-md);
-  background-color: var(--background-color);
+  background-color: var(--modal-color);
 
 .bar {
   width: 50px;
-  height: 4px;    
+  height: 4px; 
+  margin: 18px 0;   
   background: #DBDBDB;
   border-radius: 5px;
 }
@@ -34,8 +42,8 @@ button{
   text-align: left;
   transition: all .3s;
   &:hover{
-    color: var(--basic-color-4);
-    background-color: var(--basic-color-1);
+    color: var(--basic-color-5);
+    background-color: var(--basic-color-3);
   }
 }
 

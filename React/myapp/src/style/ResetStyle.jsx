@@ -7,6 +7,7 @@ export const ResetStyle = createGlobalStyle`
   a{
       text-decoration: none;
       color: inherit;
+      cursor: pointer;
   }
   *,*::before, *::after{
       box-sizing: border-box;
@@ -16,6 +17,9 @@ export const ResetStyle = createGlobalStyle`
     -webkit-user-select: auto;
     -ms-user-select: auto;
     user-select: auto;
+  }
+  input {
+    border: none;
   }
   input:focus {
     outline: none;
@@ -39,3 +43,5 @@ export const ResetStyle = createGlobalStyle`
   position: absolute;
   }
 `;
+
+export default ResetStyle;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { BasicHeader } from '../components/header/BasicHeader';
+import  BasicHeader  from '../components/header/BasicHeader';
 import { ProfileSm } from '../components/common/Profile';
 import { NavBar } from '../components/common/NavBar';
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +10,7 @@ export default function ChatList() {
 
   return (
     <>
-      <BasicHeader />
+      <BasicHeader isButton={false}/>
       <ChatListPageStyle>
         <ChatContainerStyle
           onClick={() => {
@@ -47,19 +47,19 @@ export default function ChatList() {
           </div>
         </ChatContainerStyle>
       </ChatListPageStyle>
-      <NavBar />
     </>
   );
 }
 
 const ChatListPageStyle = styled.div`
   width: var(--basic-width);
-  height: var(--basic-height);
+  height: var(--screen-nav-height);
   background-color: var(--background-color);
   overflow-y: scroll;
   overflow-x: hidden;
   ::-webkit-scrollbar {
     background-color: var(--background-color);
+    width: 0;
   }
 `;
 
@@ -67,7 +67,7 @@ const ChatContainerStyle = styled.div`
   height: 66px;
   display: flex;
   align-items: center;
-  background-color: #fcfbf3;
+  background-color: var(--background-color);
   cursor: pointer;
 
   img {
@@ -85,6 +85,7 @@ const ChatContainerStyle = styled.div`
     height: 19px;
     font-weight: bold;
     font-size: var(--font--size-md);
+    color: var(--text-color-1);
   }
 
   .chatroomlink {
@@ -101,11 +102,12 @@ const ChatContainerStyle = styled.div`
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 220px;
+    color: var(--text-color-3);
   }
 
   .date {
-    color: var(--basic-color-7);
+    color: var(--text-color-1);
     font-size: 10px;
-    margin-right: 7px;
+    margin-right: 16px;
   }
 `;

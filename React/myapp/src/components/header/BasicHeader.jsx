@@ -1,10 +1,10 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components';
 
-import IconArrowLeft from '../../assets/img/icon-arrow-left.svg'
-import IconSMore from '../../assets/img/s-icon-more.svg'
+import {ReactComponent as IconArrowLeft} from '../../assets/img/icon-arrow-left.svg'
+import {ReactComponent as IconSMore} from '../../assets/img/icon-more.svg'
 
-export function BasicHeader() {
+export default function BasicHeader({isButton, handleFunc}) {
 
   const navigate = useNavigate();
 
@@ -14,21 +14,24 @@ export function BasicHeader() {
 
   return (
     <BasicHeaderStyle>
-      <button className="backurl-btn" onClick={handleGoBack}></button>
-      <button className="more-btn"></button>
+      <IconArrowLeft onClick={handleGoBack} style={{cursor:'pointer'}}/>
+      {isButton && <IconSMore onClick={handleFunc} style={{cursor:'pointer'}}/>}
     </BasicHeaderStyle>
-  )
+  );
 }
 
 const BasicHeaderStyle = styled.div`
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 16px;
   padding-right: 12px;
   width: var(--basic-width);
-  height: 48px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  min-height: 48px;
+  box-shadow: var(--header-shadow);
+  background-color: var(--header-color);
 
   button {
     width: 22px;
@@ -37,11 +40,11 @@ const BasicHeaderStyle = styled.div`
     background-position: center;
   }
   
-  .backurl-btn {
+  .backUrlBtn {
     background-image : url(${IconArrowLeft});
   }
   
-  .more-btn {
+  .moreBtn {
     background-image : url(${IconSMore});
   }
 `;
