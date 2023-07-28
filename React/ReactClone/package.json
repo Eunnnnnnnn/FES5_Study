@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm http-server ./build -c-1",
-    "build" : "babel src -d build -w",
+    "start": "npx http-server ./build -c-1 -p 3002",
+    "build": "babel src -d build -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
