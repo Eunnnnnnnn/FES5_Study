@@ -43,7 +43,6 @@ export default function ChatRoom() {
   return (
     <>
       <ChatHeader name={'바베큐러버'} isButton={true} handleFunc={openModal} />
-      <TopBtn />
       <ChatRoomPageStyle>
         {chatHistory.map((item, index) =>
           item.receive ? (
