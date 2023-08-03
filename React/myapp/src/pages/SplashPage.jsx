@@ -29,17 +29,23 @@ export default function SplashPage() {
         <section>
         <SubTitleStyle></SubTitleStyle>
         <LoginModalStyle>
-          <li>
-            <BtnSocialStyle>
-              <Kakao></Kakao>
-            </BtnSocialStyle>
-            <BtnSocialStyle>
-              <Google></Google>
-            </BtnSocialStyle>
-            <BtnSocialStyle>
-              <Facebook></Facebook>
-            </BtnSocialStyle>
-          </li>
+          <ul>
+            <li>
+              <BtnSocialStyle aria-label='카카오로 로그인'>
+                <Kakao></Kakao>
+              </BtnSocialStyle>
+            </li>
+            <li>
+              <BtnSocialStyle aria-label='구글로 로그인'>
+                <Google></Google>
+              </BtnSocialStyle>
+            </li>
+            <li>
+              <BtnSocialStyle aria-label='페이스북으로 로그인'>
+                <Facebook></Facebook>
+              </BtnSocialStyle>
+            </li>
+        </ul>
           <div>
             <Link to="/login">
               <button className='email-login'>이메일로 로그인</button>
@@ -101,7 +107,7 @@ const loginmodal = keyframes`
   opacity: 0;
   transform: translateY(0px);
 }
-  50% {
+  40% {
     opacity: 0;
     transform: translateY(0px);
 
@@ -176,8 +182,8 @@ background-color: #ffffff;
 position: relative;
 top: -100px;
 z-index: 101;
-animation: ${loginmodal} 5s forwards;
-  li {
+animation: ${loginmodal} 3.6s forwards;
+  ul {
     list-style: none;
     position: relative;
     top: 20px
