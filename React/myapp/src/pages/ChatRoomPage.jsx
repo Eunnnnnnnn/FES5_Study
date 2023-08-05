@@ -7,8 +7,7 @@ import  ChatHeader  from '../components/header/ChatHeader';
 import { ProfileSm } from '../components/common/Profile';
 import { FileUploadSm } from '../components/common/FileUpload';
 import { Modal } from './../components/common/Modal';
-import SaleItem from '../assets/img/SaleItem.png';
-import { TopBtn } from '../components/common/Button';
+import SaleItem from '../assets/img/saleItem.png';
 
 export default function ChatRoom() {
   
@@ -61,11 +60,11 @@ export default function ChatRoom() {
         )}
       </ChatRoomPageStyle>
       <SendStyle aria-label='전송'>
-        <div className="upload">
-          <FileUploadSm aria-label='파일 업로드'/>
+        <div className='upload' >
+          <FileUploadSm aria-label='파일 업로드' />
         </div>
-        <InputStyle type={'text'} placeholder="메시지 입력하기..." aria-label='텍스트 입력'></InputStyle>
-        <button id="send" aria-label='전송 버튼'>전송</button>
+        <InputStyle type={'text'} placeholder='메시지 입력하기...' aria-label='텍스트 입력'></InputStyle>
+        <button id='send' aria-label='전송 버튼'>전송</button>
       </SendStyle>
       <ModalComponent>
         <Modal contents={['채팅방 나가기']} handleFunc={handleChatRoomOut} />
