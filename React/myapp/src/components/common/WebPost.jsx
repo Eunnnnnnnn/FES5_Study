@@ -161,7 +161,7 @@ to {
 const PostStyle = styled.article`
   position: relative;
   margin-bottom: 20px;
-  max-width: 358px;
+  max-width: 511px;
   width: 100%;
 
   .postMoreButton {
@@ -195,8 +195,8 @@ const PostContainerStyle = styled.div`
 
   pre {
     font-weight: var(--font--Regular);
-    font-size: var(--font--size-md);
-    line-height: 19px;
+    font-size: var(--font--size-Lg);
+    line-height: 24px;
     margin-bottom: 16px;
     word-break: break-all;
     white-space: pre-wrap;
@@ -224,10 +224,10 @@ const PostContainerStyle = styled.div`
 
   img {
     animation: ${fadeIn} 1s ease-in;
-    min-width: 304px;
+    min-width: 511px;
     width: 100%;
-    max-height: 228px;
-    min-height: 228px;
+    max-height: 332px;
+    min-height: 332px;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     margin-bottom: 16px;
@@ -238,15 +238,16 @@ const PostContainerStyle = styled.div`
     margin-bottom: 16px;
     .likeButton {
       margin-right: 18px;
+      font-size: var(--font--size-Lg);
     }
     .iconImg {
       vertical-align: bottom;
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
       margin: 0 6px 0 0;
     }
     .count {
-      font-size: var(--font--size-sm);
+      /* font-size: var(--font--size-Lg); */
       font-weight: var(--font--Regular);
       line-height: 12px;
       color: var(--text-color-2);
@@ -255,7 +256,7 @@ const PostContainerStyle = styled.div`
 
   .postDate {
     font-weight: var(--font--Regular);
-    font-size: var(--font--size-sm);
+    font-size: var(--font--size-Lg);
     line-height: 12px;
     color: var(--text-color-2);
   }
