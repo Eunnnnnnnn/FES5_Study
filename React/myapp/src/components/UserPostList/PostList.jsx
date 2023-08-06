@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Post from '../common/Post';
+import WebPost from '../common/WebPost';
 import { ReactComponent as NoPost } from '../../assets/img/sleepbonfire.svg';
 
 export default function PostList({ visiblePost }) {
@@ -11,7 +11,7 @@ export default function PostList({ visiblePost }) {
       {visiblePost.length !== 0 ? (
         <PostListStyle>
           {visiblePost.map((item, index) => (
-            <Post post={item} key={index} />
+            <WebPost post={item} key={index} />
           ))}
         </PostListStyle>
       ) : (

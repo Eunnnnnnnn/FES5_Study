@@ -10,7 +10,7 @@ import styled, { keyframes } from 'styled-components';
 
 import { Modal } from './Modal';
 import Alert from './Alert';
-import SearchProfile from './SearchProfile';
+import WebSearchProfile from './WebSearchProfile';
 
 import { ReactComponent as IconLike } from './../../assets/img/s-icon-fire.svg';
 import { ReactComponent as IconComment } from './../../assets/img/s-icon-message.svg';
@@ -87,7 +87,7 @@ export default function Post({ post }) {
           setAlertState('게시글을 삭제할까요?')
         }} />
         <div className='profileComponent'>
-          <SearchProfile info={post.author} />
+          <WebSearchProfile info={post.author} />
         </div>
         <PostContainerStyle locationPathname={location.pathname} contentMore={contentMore}>
           <Link to={`/postdetail/${id}`}>
@@ -224,7 +224,7 @@ const PostContainerStyle = styled.div`
 
   img {
     animation: ${fadeIn} 1s ease-in;
-    min-width: 511px;
+    min-width: 455px;
     width: 100%;
     max-height: 332px;
     min-height: 332px;
