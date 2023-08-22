@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import useModalControl from "../hooks/useModalControl";
+import useImageUploader from '../hooks/useImageUploader';
 
 import  ChatHeader  from '../components/header/ChatHeader';
 import { ProfileSm } from '../components/common/Profile';
@@ -11,7 +13,7 @@ import SaleItem from '../assets/img/saleItem.png';
 
 export default function ChatRoom() {
   
-  const chatHistory = [
+  const [chatHistory, setChatHistory] =  useState([
     {
       Msg: '캠핑 아이스 박스 사고 싶어서 문의드려요. 혹시 상태가 괜찮은가요? 짐도 많이 들어가는 편인지 궁급합니다. 고기도 함께 구입하고 싶어요. 다음주에 캠핑을 가야해서 급하게 연락합니다.',
       creatAt: '12:39',
@@ -30,14 +32,50 @@ export default function ChatRoom() {
       Img: SaleItem,
       creatAt: '12:51',
     },
-  ];
+  ]);
 
   const {openModal, ModalComponent} = useModalControl();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { handleImageChange, imageURL, imagePath, uploadValidity } = useImageUploader();
+  const [chatMessage, setChatMessage] = useState('');
 
   const handleChatRoomOut = () =>{
     navigate(-1)
   }
+
+  const handleSendButtonClick = () => {
+    // 메시지 전송 처리 로직 구현
+    const newChat = {
+      Msg: chatMessage,
+      createdAt: null, // 새로운 메시지의 생성 시간을 null로 설정
+      };
+      setChatHistory([...chatHistory, newChat]);
+      setChatMessage('');
+    };
+    
+    useEffect(() => {
+    // 이미지 업로드 처리 로직
+      if (uploadValidity) {
+        const newChat = {
+          Img: imageURL,
+          createdAt: null,
+        };
+        setChatHistory([...chatHistory, newChat]);
+      }
+    }, [uploadValidity]);
+
+    useEffect(() => {
+      // chatHistory가 업데이트될 때 실행
+      // chatHistory의 마지막 메시지의 생성 시간을 갱신
+      const updatedChatHistory = chatHistory.map((item, index) => {
+        if (index === chatHistory.length - 1 && item.createdAt === null) {
+          // 새로운 메시지의 생성 시간을 현재 시간으로 설정
+          return { ...item, createdAt: new Date().toLocaleTimeString() };
+        }
+        return item;
+      });
+      setChatHistory(updatedChatHistory);
+    }, [chatHistory]);
 
   return (
     <>
@@ -58,14 +96,14 @@ export default function ChatRoom() {
             </MyChatContainerStyle>
           )
         )}
+        <SendStyle aria-label='전송'>
+          <div className='upload' >
+            <FileUploadSm id="uploading-img" onChange={handleImageChange} aria-label='파일 업로드' />
+          </div>
+          <InputStyle type={'text'} placeholder='메시지 입력하기...' value={chatMessage} onChange={(e) => setChatMessage(e.target.value)} aria-label='텍스트 입력'></InputStyle>
+          <button id='send' onClick={handleSendButtonClick} aria-label='전송 버튼'>전송</button>
+        </SendStyle>
       </ChatRoomPageStyle>
-      <SendStyle aria-label='전송'>
-        <div className='upload' >
-          <FileUploadSm aria-label='파일 업로드' />
-        </div>
-        <InputStyle type={'text'} placeholder='메시지 입력하기...' aria-label='텍스트 입력'></InputStyle>
-        <button id='send' aria-label='전송 버튼'>전송</button>
-      </SendStyle>
       <ModalComponent>
         <Modal contents={['채팅방 나가기']} handleFunc={handleChatRoomOut} />
       </ModalComponent>
@@ -74,10 +112,13 @@ export default function ChatRoom() {
 }
 
 const ChatRoomPageStyle = styled.div`
-
-  height: var(--screen-nav-height);
+  position: relative;
+  height: var(--screen-height);
   padding-top: 24px;
 
+  @media (min-width: 768px) {
+    height: var(--screen-nav-height);
+  }
 `;
 
 const ChatContainerStyle = styled.div`
@@ -136,6 +177,8 @@ const MyChatContainerStyle = styled.div`
 `;
 
 const SendStyle = styled.div`
+  position: absolute;
+  bottom: 0px;
   width: var(--basic-width);
   height: 61px;
   display: flex;
@@ -147,10 +190,14 @@ const SendStyle = styled.div`
   }
 
   input {
-    width: 230px;
+    width: 260px;
     margin: 0 18px;
     font-size: var(--font--size-md);
     background-color: var(--background-color);
+    
+    @media (min-width: 768px) {
+      width: 393px;
+    }
   }
 
   button {
