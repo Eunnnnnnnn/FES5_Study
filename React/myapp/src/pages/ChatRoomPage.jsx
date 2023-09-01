@@ -44,6 +44,7 @@ export default function ChatRoom() {
     navigate(-1)
   }
 
+  // 채팅 UI 업로드 기능
   const handleSendButtonClick = () => {
     const newChat = {
       Msg: chatMessage, 
@@ -55,6 +56,7 @@ export default function ChatRoom() {
       }
   };
 
+  //이미지 업로드 기능
   useEffect(() => {
     if (imagePath) {
       const newChat = {
