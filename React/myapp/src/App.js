@@ -1,9 +1,8 @@
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { DarkModeAtom } from './recoil/AtomDarkModeState'
 import styled from 'styled-components'
 
-import { IsLogin, UserAtom } from './recoil/AtomUserState';
 import DefaultTheme from './style/theme/DefaultTheme'
 import DarkTheme from './style/theme/DarkTheme'
 
@@ -30,40 +29,37 @@ import WebHeader from './components/pcVersion/WebHeader';
 import WebNavBar from './components/pcVersion/WebNavBar';
 import WebFollowersRecommend from './components/pcVersion/WebFollowersRecommend';
 import WebBillboard from './components/pcVersion/WebBillboard';
-import Alert from './components/common/Alert';
-import useAlertControl from './hooks/useAlertControl';
-
 
 function App() {
 
   const darkMode = useRecoilValue(DarkModeAtom);
-  const { openAlert, AlertComponent } = useAlertControl();
 
-  const setUserValue = useSetRecoilState(UserAtom);
-  const setIsLogin = useSetRecoilState(IsLogin);
-  const navigate = useNavigate();
+  const location = useLocation();
+  const basedMarginPaths = [
+    '/splash',
+    '/login',
+    '/signup',
+    '/signup/profile'
+  ]
+  const basedWidthPaths = [
+    '/splash'
+  ]
 
-  const handleLogout = (event) =>{
-    if (event.target.textContent === '로그아웃') {
-      setUserValue({})
-      setIsLogin(false)
-      sessionStorage.removeItem('user')
-      navigate('/splash');
-    } 
-  }
+  const basedMargin = basedMarginPaths.includes(location.pathname);
+  const basedWidth = basedWidthPaths.includes(location.pathname);
 
   return (
     <PcStyle>
       <WebHeaderStyle>
-        <WebHeader handleFunc={openAlert}/>
+        <WebHeader/>
       </WebHeaderStyle>
       <MainStyle>
         <WebNavBarStyle>
           <WebNavBar />
         </WebNavBarStyle>
 
-        <WrapperStyle>
-          <BaseSizeStyle>
+        <WrapperStyle basedMargin={basedMargin}>
+          <BaseSizeStyle basedWidth={basedWidth}>
             <Routes>
               <Route path='/' element={<Navigate to='/splash' replace />} />
               <Route path='/404page' element={<Page404 />} />
@@ -98,12 +94,10 @@ function App() {
                 <Route path='/profile/:accountname/follower' element={<FollowListPage />} />
                 <Route path='/profile/:accountname/following' element={<FollowListPage />} />
                 <Route path='/productdetail' element={<ProductDetailModal />} />
+                <Route path='/editproduct' element={<AddProductPage />} />
               </Route>
             </Routes>
             <NavBar />
-          <AlertComponent>
-            <Alert alertMsg={'로그아웃 하시겠습니까?'} choice={['취소', '로그아웃']} handleFunc={handleLogout} />
-          </AlertComponent>
           </BaseSizeStyle>
         </WrapperStyle>
 
@@ -136,11 +130,6 @@ const WebHeaderStyle = styled.div`
 const MainStyle = styled.div`
   display: flex;
   justify-content: center;   
-  margin-left : 172px; // 팔로우 추천, 네비게이션 바의 너비 차이 만큼 오른쪽으로 땡기기
-
-  @media (max-width: 768px) {
-    margin-left : 0;
-  }
 `;
 
 const WebNavBarStyle = styled.div`
@@ -155,7 +144,7 @@ const WebFollowersRecommendStyle = styled.div`
   margin-top: 4%;
   display: none;
   
-  @media (min-width: 1300px) {
+  @media (min-width: 1500px) {
     display: block;
   }
 `;
@@ -165,15 +154,20 @@ const WrapperStyle = styled.div`
   justify-content: center;
 
   @media (min-width: 768px) {
-    margin-top: 26px;
+    margin-top: ${(props) => (props.basedMargin ? '0px' : '26px')};
   }
 `;
 
 const BaseSizeStyle = styled.div`
-  margin: 0 110px; // 팔로우 추천, 네비게이션 바 간격 고정되도록 가운데에 마진값 주기
+  margin: 0; // 팔로우 추천, 네비게이션 바 간격 고정되도록 가운데에 마진값 주기
   overflow: hidden;
-  width: var(--basic-width);
+  width: ${(props) => (props.basedWidth ? '100vw' : 'var(--basic-width)')};
+  /* width: var(--basic-width); */
   height: var(--basic-height);
   background-color: var(--background-color);
+
+  @media (min-width: 1500px) {
+    margin: 0 110px; // 팔로우 추천, 네비게이션 바 간격 고정되도록 가운데에 마진값 주기
+  }
 `;
 
